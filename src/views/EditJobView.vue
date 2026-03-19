@@ -3,7 +3,6 @@ import { reactive, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useToast } from 'vue-toastification';
 import { supabase } from '@/lib/supabase';
-// import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 import BackButton from '@/components/BackButton.vue';
 
 const route = useRoute();
@@ -107,10 +106,14 @@ const handleSubmit = async () => {
     <div class="max-w-3xl mx-auto px-4 py-1">
       <BackButton />
 
-      <div v-if="state.isLoading" class="flex justify-center py-20">
-        <PulseLoader color="#4f46e5" />
-      </div>
-
+     
+       <div v-if="state.isLoading" class="flex flex-col items-center justify-center py-20 w-full">
+    <div class="relative">
+      <div class="w-12 h-12 border-4 border-slate-200 rounded-full"></div>
+      <div class="absolute top-0 left-0 w-12 h-12 border-4 border-indigo-600 rounded-full border-t-transparent animate-spin"></div>
+    </div>
+    <p class="mt-4 text-slate-500 font-medium animate-pulse">Loading opportunities...</p>
+  </div>
       <div v-else class="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden">
         <div class="bg-slate-900 p-8 text-white">
           <h2 class="text-2xl font-black">Edit Listing</h2>
