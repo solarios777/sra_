@@ -5,7 +5,6 @@ import 'primeicons/primeicons.css'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import Toast from 'vue-toastification'
-// Import the CSS so the toasts look pretty!
 import 'vue-toastification/dist/index.css'
 
 import App from './App.vue'

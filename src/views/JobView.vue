@@ -79,7 +79,8 @@ onMounted(() => {
               {{ state.job.title }}
             </h1>
             <div class="flex items-center text-orange-600 font-medium">
-              <span class="mr-2 text-xl">📍</span>
+               <i class="pi pi-map-marker text-orange-700 px-1"> </i>
+
               {{ state.job.location }}
             </div>
           </div>

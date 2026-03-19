@@ -1,6 +1,7 @@
 import HomeView from '@/views/HomeView.vue'
 import JobsView from '@/views/JobsView.vue'
 import JobView from '@/views/JobView.vue'
+import EditJobView from '@/views/EditJobView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
@@ -21,6 +22,11 @@ const router = createRouter({
       path: '/jobs/:id',
       name: 'job',
       component: JobView,
+    },
+    {
+      path: '/jobs/edit/:id',
+      name: 'edit-job',
+      component: EditJobView,
     },
     {
       path: '/:catchAll(.*)',
