@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { reactive, ref} from 'vue';
+import { reactive, onMounted } from 'vue';
+import { supabase } from '@/lib/supabase';
 import { RouterLink } from 'vue-router';
-import jobData from '@/jobs.json';
 import JobListing from './JobListing.vue';
 
 interface Props {
@@ -14,17 +14,29 @@ const props = withDefaults(defineProps<Props>(), {
   showButton: false
 });
 
-const jobList=ref(jobData)
-// Define the State
-interface JobState {
-  jobs: any[];
-  isLoading: boolean;
-}
+const state = reactive({
+  jobs: [] as any[],
+  isLoading: true,
+});
 
-const state = reactive<JobState>({
-  // FIX: Access the .jobs property from your JSON file
-  jobs: jobList.value.jobs,
-  isLoading: false,
+const fetchJobs = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('jobs')
+      .select('*, companies(*)')
+      .order('created_at', { ascending: false });
+
+    if (error) throw error;
+    state.jobs = data;
+  } catch (error) {
+    console.error('Error fetching jobs:', error);
+  } finally {
+    state.isLoading = false;
+  }
+};
+
+onMounted(() => {
+  fetchJobs();
 });
 </script>
 

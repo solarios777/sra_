@@ -8,7 +8,7 @@ import Card from './CardCom.vue';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <Card bg="bg-white">
+        <Card bg="bg-indigo-50/50">
           <div class="flex flex-col h-full">
             <h2 class="text-2xl font-bold text-slate-900 tracking-tight">For Job Seekers</h2>
             <p class="mt-3 mb-6 text-slate-600 leading-relaxed">
