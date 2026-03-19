@@ -2,16 +2,13 @@
 
 <script setup lang="ts">
 
-import Navbar from './components/Navbar.vue';
-import HeroSec from './components/HeroSec.vue';
-import HomeCards from './components/HomeCards.vue';
-import JobListings from './components/JobListings.vue';
+import Navbar from './components/NavBar.vue';
+import { RouterView } from 'vue-router';
+
 
 </script>
 
 <template>
   <Navbar />
-  <HeroSec  />
-  <HomeCards/>
-  <JobListings/>
+  <RouterView/>
 </template>

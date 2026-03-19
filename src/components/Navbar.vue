@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import logo from '@/assets/img/logo.png';
 

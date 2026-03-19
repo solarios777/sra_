@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive} from 'vue';
+import { reactive, ref} from 'vue';
 import { RouterLink } from 'vue-router';
 import jobData from '@/jobs.json';
 import JobListing from './JobListing.vue';
@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<Props>(), {
   showButton: false
 });
 
+const jobList=ref(jobData)
 // Define the State
 interface JobState {
   jobs: any[];
@@ -22,7 +23,7 @@ interface JobState {
 
 const state = reactive<JobState>({
   // FIX: Access the .jobs property from your JSON file
-  jobs: jobData.jobs,
+  jobs: jobList.value.jobs,
   isLoading: false,
 });
 </script>
