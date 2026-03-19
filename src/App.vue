@@ -1,10 +1,13 @@
 
 
 <script setup>
+
 import Navbar from './components/Navbar.vue';
-const projectName = "ስራ ላይ"
+import HeroSec from './components/HeroSec.vue';
+
 </script>
 
 <template>
   <Navbar />
+  <HeroSec  />
 </template>
