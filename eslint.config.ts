@@ -30,3 +30,9 @@ export default defineConfigWithVueTs(
 
   skipFormatting,
 )
+// Inside your rules object
+'vue/block-lang'; ['error', {
+  'script': {
+    'lang': 'ts' // This forces <script lang="ts">
+  }
+}]
