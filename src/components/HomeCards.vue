@@ -10,15 +10,15 @@ import Card from './CardCom.vue';
 
         <Card bg="bg-white">
           <div class="flex flex-col h-full">
-            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">For Developers</h2>
+            <h2 class="text-2xl font-bold text-slate-900 tracking-tight">For Job Seekers</h2>
             <p class="mt-3 mb-6 text-slate-600 leading-relaxed">
-              Explore the best Vue.js opportunities and take the next step in your professional journey.
+              Explore thousands of opportunities across various industries. Find the role that matches your expertise and passion.
             </p>
             <RouterLink
               to="/jobs"
               class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100"
             >
-              Browse Jobs
+              Explore All Jobs
             </RouterLink>
           </div>
         </Card>
@@ -26,13 +26,13 @@ import Card from './CardCom.vue';
         <Card bg="bg-emerald-50/50"> <div class="flex flex-col h-full">
             <h2 class="text-2xl font-bold text-slate-900 tracking-tight">For Employers</h2>
             <p class="mt-3 mb-6 text-slate-600 leading-relaxed">
-              Find the perfect talent for your team. Post your job listing and reach thousands of developers.
+              Connect with top-tier talent. Post your openings to our global network and build your dream team today.
             </p>
             <RouterLink
               to="/jobs/add"
               class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100"
             >
-              Post a Job
+              Post an Opening
             </RouterLink>
           </div>
         </Card>

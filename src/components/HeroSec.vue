@@ -7,9 +7,9 @@ interface Props {
 
 // withDefaults allows us to set the "fallback" values in a TS-friendly way
 const props = withDefaults(defineProps<Props>(), {
-  title: 'Become a Worker',
-  subtitle: 'Find jobs that fit your skills and needs'
-});
+  title: 'Elevate Your Career',
+  subtitle: 'Connecting extraordinary talent with the nation’s most innovative companies.'
+  });
 </script>
 
 <template>
