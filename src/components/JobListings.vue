@@ -52,6 +52,14 @@ onMounted(() => {
         <div class="h-1.5 w-20 bg-indigo-600 rounded-full"></div>
       </div>
 
+      <div v-if="state.isLoading" class="flex flex-col items-center justify-center py-20 w-full">
+    <div class="relative">
+      <div class="w-12 h-12 border-4 border-slate-200 rounded-full"></div>
+      <div class="absolute top-0 left-0 w-12 h-12 border-4 border-indigo-600 rounded-full border-t-transparent animate-spin"></div>
+    </div>
+    <p class="mt-4 text-slate-500 font-medium animate-pulse">Loading opportunities...</p>
+  </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <JobListing
           v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
