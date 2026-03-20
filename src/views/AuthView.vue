@@ -45,7 +45,7 @@ const handleAuth = async () => {
 </script>
 
 <template>
-  <div class="h-full bg-[#f8fafc] flex items-center justify-center px-4 pt-10 pb-20 font-sans overflow-hidden">
+  <div class="h-full bg-[#f8fafc] flex items-center justify-center px-4 pt-10 pb-20 font-sans overflow-hidden ">
     <div class="relative w-full max-w-[750px] h-[75vh] md:h-[500px] bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
 
       <div class="relative w-full h-full flex flex-col md:flex-row">

@@ -23,7 +23,7 @@ const router = createRouter({
     {
       path: '/jobs/:id',
       name: 'job',
-      component: AuthView,
+      component: JobView,
     },
     {
       path: '/jobs/edit/:id',
@@ -34,6 +34,11 @@ const router = createRouter({
       path: '/jobs/add',
       name: 'add-job',
       component: AddJobView,
+    },
+    {
+      path: '/signin',
+      name: 'AuthView',
+      component: AuthView,
     },
     {
       path: '/:catchAll(.*)',

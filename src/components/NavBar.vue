@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, useRoute } from 'vue-router';
 import logo from '@/assets/img/logo.png';
+import { UserCircle } from 'lucide-vue-next';
 
 const route = useRoute();
 
@@ -57,6 +58,12 @@ const isActiveLink = (routePath: string): boolean => {
             class="ml-2 rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95"
           >
             Post a Job
+          </RouterLink>
+          <RouterLink
+            to="/signin"
+            class="ml-2 rounded-full bg-black  text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95"
+          >
+            <UserCircle :size="25" />
           </RouterLink>
         </div>
 
