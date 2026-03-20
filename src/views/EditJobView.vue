@@ -106,7 +106,7 @@ const handleSubmit = async () => {
     <div class="max-w-3xl mx-auto px-4 py-1">
       <BackButton />
 
-     
+
        <div v-if="state.isLoading" class="flex flex-col items-center justify-center py-20 w-full">
     <div class="relative">
       <div class="w-12 h-12 border-4 border-slate-200 rounded-full"></div>
@@ -115,7 +115,7 @@ const handleSubmit = async () => {
     <p class="mt-4 text-slate-500 font-medium animate-pulse">Loading opportunities...</p>
   </div>
       <div v-else class="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden">
-        <div class="bg-slate-900 p-8 text-white">
+        <div class="bg-gradient-to-r from-indigo-400 to-emerald-400 p-8 text-white">
           <h2 class="text-2xl font-black">Edit Listing</h2>
           <p class="text-slate-400 text-sm mt-1">Update the details for your job post</p>
         </div>
@@ -190,7 +190,7 @@ const handleSubmit = async () => {
           <button
             type="submit"
             :disabled="state.isUpdating"
-            class="w-full bg-indigo-600 text-white font-black py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:opacity-50 active:scale-[0.98]"
+            class="w-full bg-gradient-to-r from-indigo-400 to-emerald-400 text-white font-black py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:opacity-50 active:scale-[0.98]"
           >
             {{ state.isUpdating ? 'Saving Changes...' : 'Save Job Details' }}
           </button>

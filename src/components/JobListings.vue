@@ -116,7 +116,7 @@ onUnmounted(() => {
         <div v-if="showButton && state.jobs.length > 0" class="mt-16 text-center">
           <RouterLink
             to="/jobs"
-            class="inline-block px-10 py-4 bg-white border-2 border-slate-900 text-slate-900 font-bold rounded-2xl hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-xl shadow-slate-200 active:scale-95"
+            class="inline-block px-10 py-4 bg-gradient-to-r from-indigo-400 to-emerald-400  text-slate-900 font-bold rounded-2xl hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-xl shadow-slate-200 active:scale-95"
           >
             View All Current Openings
           </RouterLink>

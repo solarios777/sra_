@@ -78,7 +78,7 @@ const handleSubmit = async () => {
       <BackButton />
 
       <div class="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden">
-        <div class="bg-indigo-600 p-8 text-white">
+        <div class="bg-gradient-to-r from-indigo-400 to-emerald-400 p-8 text-white">
           <h2 class="text-2xl font-black">Post a New Job</h2>
           <p class="text-indigo-100 text-sm mt-1">Fill out the details to find your next great hire.</p>
         </div>
@@ -153,7 +153,7 @@ const handleSubmit = async () => {
           <button
             type="submit"
             :disabled="state.isSubmitting"
-            class="w-full bg-indigo-600 text-white font-black py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:opacity-50 active:scale-[0.98]"
+            class="w-full bg-gradient-to-r from-indigo-400 to-emerald-400 text-white font-black py-4 rounded-2xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 disabled:opacity-50 active:scale-[0.98]"
           >
             {{ state.isSubmitting ? 'Posting Job...' : 'Publish Listing' }}
           </button>

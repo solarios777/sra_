@@ -16,7 +16,7 @@ import Card from './CardCom.vue';
             </p>
             <RouterLink
               to="/jobs"
-              class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100"
+              class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-gradient-to-r from-indigo-400 to-emerald-400 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100"
             >
               Explore All Jobs
             </RouterLink>
@@ -30,7 +30,7 @@ import Card from './CardCom.vue';
             </p>
             <RouterLink
               to="/jobs/add"
-              class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100"
+              class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-gradient-to-r from-indigo-400 to-emerald-400 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100"
             >
               Post an Opening
             </RouterLink>

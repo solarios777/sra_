@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
         </p>
 
         <div class="mt-10 flex flex-wrap justify-center gap-4">
-          <button class="px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/20 active:scale-95">
+          <button class="px-8 py-3 bg-gradient-to-r from-indigo-400 to-emerald-400 hover:bg-indigo-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-500/20 active:scale-95">
             Get Started
           </button>
           <button class="px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl border border-white/10 transition-all backdrop-blur-sm">

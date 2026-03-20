@@ -55,7 +55,7 @@ const isActiveLink = (routePath: string): boolean => {
 
           <RouterLink
             to="/jobs/add"
-            class="ml-2 rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95"
+            class="ml-2 rounded-full bg-gradient-to-r from-indigo-400 to-emerald-400 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95"
           >
             Post a Job
           </RouterLink>
