@@ -1,6 +1,7 @@
 import HomeView from '@/views/HomeView.vue'
 import JobsView from '@/views/JobsView.vue'
 import JobView from '@/views/JobView.vue'
+import AuthView from '@/views/AuthView.vue'
 import EditJobView from '@/views/EditJobView.vue'
 import AddJobView from '@/views/AddJobView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
@@ -22,7 +23,7 @@ const router = createRouter({
     {
       path: '/jobs/:id',
       name: 'job',
-      component: JobView,
+      component: AuthView,
     },
     {
       path: '/jobs/edit/:id',
