@@ -53,10 +53,10 @@ const handleAuth = async () => {
         <div
           class="w-full md:w-1/2 transition-all duration-700 ease-in-out flex flex-col items-center text-center p-0 md:p-10"
           :class="[
-            isLogin ? 'opacity-0 invisible h-0  md:h-full' : 'opacity-100 visible h-[75%] mt-[25%] md:mt-0 md:h-full justify-center'
+            isLogin ? 'opacity-0 invisible h-0  md:h-full' : 'opacity-100 visible h-[75%] mt-[5%] md:mt-0 md:h-full justify-center'
           ]"
         >
-          <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-0 md:mb-4 mt-0 md:mt-20">Create Account</h2>
+          <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-4 mt-0 md:mt-20">Create Account</h2>
           <form @submit.prevent="handleAuth" class="w-full space-y-4 max-w-xs flex-grow flex flex-col justify-center md:mb-4">
             <div class="space-y-3">
                <div class="relative">
@@ -75,8 +75,8 @@ const handleAuth = async () => {
             <button class="w-full bg-[#0f172a] text-white py-3 mt-6 rounded-xl font-bold uppercase tracking-widest shadow-lg hover:bg-slate-800 transition-all active:scale-95">Register</button>
           </form>
           <div>
-            <p class="text-slate-400 text-xs mb-3">or register with</p>
-            <div class="flex gap-3 justify-center mb-30">
+            <p class="text-slate-400 text-xs mb-2">or register with</p>
+            <div class="flex gap-3 justify-center mb-20">
                <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Chrome :size="18" /></button>
              <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Facebook :size="18" /></button>
              <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Github :size="18" /></button>
