@@ -59,7 +59,7 @@ onMounted(() => {
     </div>
     <p class="mt-4 text-slate-500 font-medium animate-pulse">Loading opportunities...</p>
   </div>
-
+    <div v-if="!state.isLoading">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <JobListing
           v-for="job in state.jobs.slice(0, limit || state.jobs.length)"
@@ -80,6 +80,7 @@ onMounted(() => {
           View All Current Openings
         </RouterLink>
       </div>
+    </div>
     </div>
   </section>
 </template>
