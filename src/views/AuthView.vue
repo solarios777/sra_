@@ -45,8 +45,8 @@ const handleAuth = async () => {
 </script>
 
 <template>
-  <div class="h-full bg-[#e2e8f0] flex items-center justify-center px-4 pt-10 pb-20 font-sans overflow-hidden">
-    <div class="relative w-full max-w-[750px] h-[75vh] md:h-[500px] bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+  <div class="h-full bg-[#f8fafc] flex items-center justify-center px-4 pt-10 pb-20 font-sans overflow-hidden">
+    <div class="relative w-full max-w-[750px] h-[75vh] md:h-[500px] bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
 
       <div class="relative w-full h-full flex flex-col md:flex-row">
 
@@ -56,29 +56,31 @@ const handleAuth = async () => {
             isLogin ? 'opacity-0 invisible h-0  md:h-full' : 'opacity-100 visible h-[75%] mt-[25%] md:mt-0 md:h-full justify-center'
           ]"
         >
-          <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-0 md:mb-4 mt-0 md:mt-20">Create Account</h2>
+          <h2 class="text-2xl md:text-3xl font-black text-slate-900 mb-0 md:mb-4 mt-0 md:mt-20">Create Account</h2>
           <form @submit.prevent="handleAuth" class="w-full space-y-4 max-w-xs flex-grow flex flex-col justify-center md:mb-4">
             <div class="space-y-3">
                <div class="relative">
                 <User class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" :size="18" />
-                <input v-model="form.username" type="text" placeholder="Username" class="w-full bg-slate-100 border-none rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-purple-400" />
+                <input v-model="form.username" type="text" placeholder="Username" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-600 transition-all" />
               </div>
               <div class="relative">
                 <Mail class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" :size="18" />
-                <input v-model="form.email" type="email" placeholder="Email" class="w-full bg-slate-100 border-none rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-purple-400" />
+                <input v-model="form.email" type="email" placeholder="Email" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-600 transition-all" />
               </div>
               <div class="relative">
                 <Lock class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" :size="18" />
-                <input v-model="form.password" type="password" placeholder="Password" class="w-full bg-slate-100 border-none rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-purple-400" />
+                <input v-model="form.password" type="password" placeholder="Password" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-600 transition-all" />
               </div>
             </div>
-            <button class="w-full bg-[#800080] text-white py-3 mt-6 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95">Register</button>
+            <button class="w-full bg-[#0f172a] text-white py-3 mt-6 rounded-xl font-bold uppercase tracking-widest shadow-lg hover:bg-slate-800 transition-all active:scale-95">Register</button>
           </form>
           <div>
-            <p class="text-slate-400 text-xs mb-3 ">or register with</p>
+            <p class="text-slate-400 text-xs mb-3">or register with</p>
             <div class="flex gap-3 justify-center mb-30">
-               <button class="w-9 h-9 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"><Chrome :size="16" /></button>
-               <button class="w-9 h-9 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"><Github :size="16" /></button>
+               <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Chrome :size="18" /></button>
+             <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Facebook :size="18" /></button>
+             <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Github :size="18" /></button>
+             <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Linkedin :size="18" /></button>
             </div>
           </div>
         </div>
@@ -89,33 +91,35 @@ const handleAuth = async () => {
             isLogin ? 'opacity-100 visible h-[95%] md:h-full justify-center' : 'opacity-0 invisible h-0 md:h-full'
           ]"
         >
-          <h2 class="text-2xl md:text-3xl font-black text-slate-800 mt-38 md:mt-0">Login</h2>
+          <h2 class="text-2xl md:text-3xl font-black text-slate-900 mt-38 md:mt-0">Login</h2>
           <form @submit.prevent="handleAuth" class="w-full space-y-4 max-w-xs flex-grow flex flex-col justify-center">
             <div class="space-y-3">
               <div class="relative">
                 <Mail class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" :size="18" />
-                <input v-model="form.email" type="email" placeholder="Email" class="w-full bg-slate-100 border-none rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-purple-400" />
+                <input v-model="form.email" type="email" placeholder="Email" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-600 transition-all" />
               </div>
               <div class="relative">
                 <Lock class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" :size="18" />
-                <input v-model="form.password" type="password" placeholder="Password" class="w-full bg-slate-100 border-none rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-purple-400" />
+                <input v-model="form.password" type="password" placeholder="Password" class="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 pl-12 pr-4 outline-none focus:ring-2 focus:ring-blue-600 transition-all" />
               </div>
-              <button type="button" class="text-xs text-slate-500 hover:text-[#800080] block w-full text-right">Forgot password?</button>
+              <button type="button" class="text-xs text-blue-600 font-semibold hover:underline block w-full text-right">Forgot password?</button>
             </div>
-            <button class="w-full bg-[#800080] text-white py-3 mt-2 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95">Login</button>
+            <button class="w-full bg-[#0f172a] text-white py-3 mt-2 rounded-xl font-bold uppercase tracking-widest shadow-lg hover:bg-slate-800 transition-all active:scale-95">Login</button>
           </form>
           <div class="mt-4">
             <p class="text-slate-400 text-xs mb-2">or login with</p>
             <div class="flex gap-3 justify-center">
-               <button class="w-9 h-9 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"><Chrome :size="16" /></button>
-               <button class="w-9 h-9 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"><Github :size="16" /></button>
+               <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Chrome :size="18" /></button>
+             <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Facebook :size="18" /></button>
+             <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Github :size="18" /></button>
+             <button class="w-10 h-10 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600 hover:bg-slate-50"><Linkedin :size="18" /></button>
             </div>
           </div>
         </div>
       </div>
 
       <div
-        class="absolute left-0 w-full md:w-1/2 h-[25%] md:h-full bg-[#800080] transition-all duration-[800ms] ease-in-out z-20 flex items-center justify-center p-6 text-white text-center"
+        class="absolute left-0 w-full md:w-1/2 h-[25%] md:h-full bg-[#3b82f6] transition-all duration-[800ms] ease-in-out z-20 flex items-center justify-center p-6 text-white text-center"
         :class="[
           isLogin
             ? 'top-0 md:translate-x-0 rounded-b-[40px] md:rounded-b-none md:rounded-r-[150px]'
@@ -123,8 +127,13 @@ const handleAuth = async () => {
         ]"
       >
         <div class="transition-all duration-500">
-          <h2 class="text-xl md:text-3xl font-bold mb-1">{{ isLogin ? 'Hello!' : 'Welcome Back!' }}</h2>
-          <button @click="isLogin = !isLogin" class="mt-2 px-10 py-2 border-2 border-white rounded-xl font-bold uppercase text-xs hover:bg-white hover:text-[#800080] transition-all">
+          <h2 class="text-2xl md:text-3xl font-bold mb-1 md:mb-2">
+            {{ isLogin ? 'Hello, Welcome!' : 'Welcome!' }}
+          </h2>
+          <p class="mb-4 md:mb-8 text-sm font-medium opacity-80">
+            {{ isLogin ? "Don't have an account?" : "Already have an account?" }}
+          </p>
+          <button @click="isLogin = !isLogin" class="mt-2 px-10 py-2 border-2 border-white rounded-xl font-bold uppercase text-xs hover:bg-white hover:text-blue-600 transition-all active:scale-95">
             {{ isLogin ? 'Register' : 'Login' }}
           </button>
         </div>
