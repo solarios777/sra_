@@ -119,7 +119,7 @@ const handleAuth = async () => {
       </div>
 
       <div
-        class="absolute left-0 w-full md:w-1/2 h-[25%] md:h-full bg-gradient-to-r from-indigo-400 to-emerald-400 transition-all duration-[800ms] ease-in-out z-20 flex items-center justify-center p-6 text-white text-center"
+        class="absolute left-0 w-full md:w-1/2 h-[25%] md:h-full bg-slate-900 transition-all duration-[800ms] ease-in-out z-20 flex items-center justify-center p-6 text-white text-center"
         :class="[
           isLogin
             ? 'top-0 md:translate-x-0 rounded-b-[40px] md:rounded-b-none md:rounded-r-[150px]'

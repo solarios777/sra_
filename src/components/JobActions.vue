@@ -33,7 +33,7 @@ const handleDelete = async () => {
     <div class="space-y-3">
       <RouterLink
         :to="`/jobs/edit/${jobId}`"
-        class="block w-full text-center py-3 bg-gradient-to-r from-indigo-400 to-emerald-400 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 active:scale-95"
+        class="block w-full text-center py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-100 active:scale-95"
       >
         Edit Job
       </RouterLink>
