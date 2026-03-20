@@ -45,19 +45,19 @@ const handleAuth = async () => {
 </script>
 
 <template>
-  <div class="h-full bg-[#e2e8f0] flex items-center justify-center p-4 font-sans overflow-hidden">
-    <div class="relative w-full max-w-[850px] h-[85vh] md:h-[550px] bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+  <div class="h-full bg-[#e2e8f0] flex items-center justify-center px-4 pt-10 pb-20 font-sans overflow-hidden">
+    <div class="relative w-full max-w-[750px] h-[75vh] md:h-[500px] bg-white rounded-[30px] shadow-2xl overflow-hidden flex flex-col md:flex-row">
 
       <div class="relative w-full h-full flex flex-col md:flex-row">
 
         <div
-          class="w-full md:w-1/2 transition-all duration-700 ease-in-out flex flex-col items-center text-center p-8 md:p-10"
+          class="w-full md:w-1/2 transition-all duration-700 ease-in-out flex flex-col items-center text-center p-0 md:p-10"
           :class="[
-            isLogin ? 'opacity-0 invisible h-0 md:h-full' : 'opacity-100 visible h-[75%] mt-[25%] md:mt-0 md:h-full justify-center'
+            isLogin ? 'opacity-0 invisible h-0  md:h-full' : 'opacity-100 visible h-[75%] mt-[25%] md:mt-0 md:h-full justify-center'
           ]"
         >
-          <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-6">Create Account</h2>
-          <form @submit.prevent="handleAuth" class="w-full space-y-4 max-w-xs flex-grow flex flex-col justify-center">
+          <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-0 md:mb-4 mt-0 md:mt-20">Create Account</h2>
+          <form @submit.prevent="handleAuth" class="w-full space-y-4 max-w-xs flex-grow flex flex-col justify-center md:mb-4">
             <div class="space-y-3">
                <div class="relative">
                 <User class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" :size="18" />
@@ -74,9 +74,9 @@ const handleAuth = async () => {
             </div>
             <button class="w-full bg-[#800080] text-white py-3 mt-6 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95">Register</button>
           </form>
-          <div class="mt-4">
-            <p class="text-slate-400 text-xs mb-2">or register with</p>
-            <div class="flex gap-3 justify-center">
+          <div>
+            <p class="text-slate-400 text-xs mb-3 ">or register with</p>
+            <div class="flex gap-3 justify-center mb-30">
                <button class="w-9 h-9 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"><Chrome :size="16" /></button>
                <button class="w-9 h-9 border border-slate-200 rounded-xl flex items-center justify-center text-slate-600"><Github :size="16" /></button>
             </div>
@@ -86,10 +86,10 @@ const handleAuth = async () => {
         <div
           class="w-full md:w-1/2 transition-all duration-700 ease-in-out flex flex-col items-center text-center p-8 md:p-10"
           :class="[
-            isLogin ? 'opacity-100 visible h-[75%] md:h-full justify-center' : 'opacity-0 invisible h-0 md:h-full'
+            isLogin ? 'opacity-100 visible h-[95%] md:h-full justify-center' : 'opacity-0 invisible h-0 md:h-full'
           ]"
         >
-          <h2 class="text-2xl md:text-3xl font-black text-slate-800 mb-6">Login</h2>
+          <h2 class="text-2xl md:text-3xl font-black text-slate-800 mt-38 md:mt-0">Login</h2>
           <form @submit.prevent="handleAuth" class="w-full space-y-4 max-w-xs flex-grow flex flex-col justify-center">
             <div class="space-y-3">
               <div class="relative">
@@ -102,7 +102,7 @@ const handleAuth = async () => {
               </div>
               <button type="button" class="text-xs text-slate-500 hover:text-[#800080] block w-full text-right">Forgot password?</button>
             </div>
-            <button class="w-full bg-[#800080] text-white py-3 mt-6 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95">Login</button>
+            <button class="w-full bg-[#800080] text-white py-3 mt-2 rounded-xl font-bold uppercase tracking-widest shadow-lg active:scale-95">Login</button>
           </form>
           <div class="mt-4">
             <p class="text-slate-400 text-xs mb-2">or login with</p>
