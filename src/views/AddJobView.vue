@@ -73,8 +73,8 @@ const handleSubmit = async () => {
 </script>
 
 <template>
-  <main class="bg-slate-50 min-h-screen pb-12">
-    <div class="max-w-3xl mx-auto px-4 py-8">
+  <main class="bg-slate-50 min-h-screen pb-1">
+    <div class="max-w-3xl mx-auto px-4 py-1">
       <BackButton />
 
       <div class="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 overflow-hidden">
