@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue';
 import { RouterLink } from 'vue-router';
 
+
 // Define the structure of the Job prop
 interface Job {
   id: string;
