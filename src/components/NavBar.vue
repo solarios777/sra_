@@ -2,12 +2,27 @@
 import { RouterLink, useRoute } from 'vue-router';
 import logo from '@/assets/img/logo.png';
 import { UserCircle } from 'lucide-vue-next';
+import { useRouter } from 'vue-router'
+import { supabase } from '@/lib/supabase'
+
+const router = useRouter()
 
 const route = useRoute();
 
 const isActiveLink = (routePath: string): boolean => {
   return route.path === routePath;
 };
+const handleViewDetail = async () => {
+  const { data: { session } } = await supabase.auth.getSession()
+
+  if (!session) {
+    // If no session, send to auth page
+    router.push('/signin')
+  } else {
+    // If session exists, go to the specific job page
+    router.push('/jobs/add');
+  }
+}
 </script>
 
 <template>
@@ -53,12 +68,12 @@ const isActiveLink = (routePath: string): boolean => {
             Jobs
           </RouterLink>
 
-          <RouterLink
-            to="/jobs/add"
+          <button
+            @click="handleViewDetail"
             class="ml-2 rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95"
           >
             Post a Job
-          </RouterLink>
+          </button>
           <RouterLink
             to="/signin"
             class="ml-2 rounded-full bg-indigo-600  text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95"

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { RouterLink } from 'vue-router';
+import { useRouter } from 'vue-router'
+import { supabase } from '@/lib/supabase'
 
+const router = useRouter()
 
 // Define the structure of the Job prop
 interface Job {
@@ -30,6 +32,18 @@ const truncatedDescription = computed(() => {
   }
   return desc;
 });
+
+const handleViewDetail = async () => {
+  const { data: { session } } = await supabase.auth.getSession()
+
+  if (!session) {
+    // If no session, send to auth page
+    router.push('/signin')
+  } else {
+    // If session exists, go to the specific job page
+    router.push(`/jobs/${props.job.id}`)
+  }
+}
 </script>
 
 <template>
@@ -65,12 +79,12 @@ const truncatedDescription = computed(() => {
         </div>
       </div>
 
-      <RouterLink
-        :to="'/jobs/' + job.id"
+      <button
+        @click="handleViewDetail"
         class="block w-full text-center py-2.5 bg-slate-900 text-white font-medium rounded-xl hover:bg-indigo-600 transition-all active:scale-95"
       >
         View Details
-      </RouterLink>
+      </button>
     </div>
   </div>
 </template>
