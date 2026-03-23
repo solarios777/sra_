@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router';
 import { useToast } from 'vue-toastification';
 import { supabase } from '@/lib/supabase';
 import BackButton from '@/components/BackButton.vue';
-import JobActions from '@/components/JobActions.vue'; // New Import
+import JobActions from '@/components/JobActions.vue';
 import LoadingState from '@/components/LoadingState.vue';
 import { MapPin } from 'lucide-vue-next';
 
@@ -15,10 +15,15 @@ const jobId = route.params.id;
 const state = reactive({
   job: null as any,
   isLoading: true,
+  isOwner: false, // New state to track ownership
 });
 
 onMounted(async () => {
   try {
+    // 1. Get the current logged-in user
+    const { data: { user } } = await supabase.auth.getUser();
+
+    // 2. Fetch the job details
     const { data, error } = await supabase
       .from('jobs')
       .select('*, companies(*)')
@@ -26,7 +31,15 @@ onMounted(async () => {
       .single();
 
     if (error) throw error;
+
     state.job = data;
+
+    // 3. Check if the logged-in user matches the person who posted the job
+    // Note: This assumes your 'jobs' table has a column named 'user_id'
+    if (user && data && user.id === data.user_id) {
+      state.isOwner = true;
+    }
+
   } catch (error) {
     toast.error('Could not load job details');
   } finally {
@@ -65,11 +78,8 @@ onMounted(async () => {
         <aside class="space-y-6">
           <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
             <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Company Info</h3>
-
             <h2 class="text-2xl font-black text-slate-900 mb-3">{{ state.job.companies?.name }}</h2>
-            <p class="text-slate-600 text-sm leading-relaxed mb-6">
-              {{ state.job.companies?.description }}
-            </p>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">{{ state.job.companies?.description }}</p>
 
             <div class="space-y-4">
               <div class="p-4 bg-slate-50 rounded-xl">
@@ -83,9 +93,7 @@ onMounted(async () => {
             </div>
           </div>
 
-
-
-          <JobActions :jobId="state.job.id" />
+          <JobActions v-if="state.isOwner" :jobId="state.job.id" />
         </aside>
       </div>
     </div>

@@ -27,7 +27,16 @@ const form = reactive({
 const handleSubmit = async () => {
   state.isSubmitting = true;
   try {
-    // 1. Insert the Company first to get a company_id
+    // 1. Get the current logged-in user's ID
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+      toast.error('You must be logged in to post a job');
+      return router.push('/signin');
+    }
+
+    // 2. Insert the Company
+    // We include user_id so this user "owns" the company profile too
     const { data: companyData, error: companyError } = await supabase
       .from('companies')
       .insert([
@@ -36,6 +45,7 @@ const handleSubmit = async () => {
           description: form.companyDescription,
           contact_email: form.contactEmail,
           contact_phone: form.contactPhone,
+          user_id: user.id, // Explicitly link to the owner
         },
       ])
       .select()
@@ -43,7 +53,7 @@ const handleSubmit = async () => {
 
     if (companyError) throw companyError;
 
-    // 2. Insert the Job using the ID from the company we just created
+    // 3. Insert the Job
     const { data: jobData, error: jobError } = await supabase
       .from('jobs')
       .insert([
@@ -54,6 +64,7 @@ const handleSubmit = async () => {
           description: form.description,
           salary: form.salary,
           company_id: companyData.id,
+          user_id: user.id, // Explicitly link to the owner
         },
       ])
       .select()
