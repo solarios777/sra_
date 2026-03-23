@@ -6,14 +6,15 @@ import { supabase } from '@/lib/supabase'
 
 const router = useRouter()
 
-const handleViewDetail = async () => {
+const handlePostJobClick = async () => {
   const { data: { session } } = await supabase.auth.getSession()
 
   if (!session) {
-    // If no session, send to auth page
-    router.push('/signin')
+    router.push({
+      path: '/signin',
+      query: { redirect: '/jobs/add' }
+    })
   } else {
-    // If session exists, go to the specific job page
     router.push('/jobs/add');
   }
 }
@@ -45,7 +46,7 @@ const handleViewDetail = async () => {
               Connect with top-tier talent. Post your openings to our global network and build your dream team today.
             </p>
             <button
-              @click="handleViewDetail"
+              @click="handlePostJobClick"
               class="mt-auto inline-flex items-center justify-center w-fit px-6 py-2.5 bg-emerald-600 text-white font-semibold rounded-xl hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-100"
             >
               Post an Opening

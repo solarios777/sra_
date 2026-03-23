@@ -37,10 +37,12 @@ const handleViewDetail = async () => {
   const { data: { session } } = await supabase.auth.getSession()
 
   if (!session) {
-    // If no session, send to auth page
-    router.push('/signin')
+    // We "save" the current job's path in the URL as a query string
+    router.push({
+      path: '/signin',
+      query: { redirect: `/jobs/${props.job.id}` }
+    })
   } else {
-    // If session exists, go to the specific job page
     router.push(`/jobs/${props.job.id}`)
   }
 }

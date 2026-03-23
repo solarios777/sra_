@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, useRoute } from 'vue-router';
 import logo from '@/assets/img/logo.png';
-import { UserCircle, LogOut, PlusCircle } from 'lucide-vue-next';
+import { UserCircle, LogOut } from 'lucide-vue-next';
 import { useRouter } from 'vue-router'
 import { supabase } from '@/lib/supabase'
 import { onMounted, ref, computed } from 'vue';
@@ -21,10 +21,14 @@ const userInitial = computed(() => {
   return email.charAt(0).toUpperCase();
 });
 
-const handleViewDetail = async () => {
+const handlePostJobClick = async () => {
   const { data: { session } } = await supabase.auth.getSession()
+
   if (!session) {
-    router.push('/signin')
+    router.push({
+      path: '/signin',
+      query: { redirect: '/jobs/add' }
+    })
   } else {
     router.push('/jobs/add');
   }
@@ -72,7 +76,7 @@ const handleLogout = async () => {
             Jobs
           </RouterLink>
 
-          <button @click="handleViewDetail" class="ml-2 rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95">
+          <button @click="handlePostJobClick" class="ml-2 rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-100 transition-all hover:bg-indigo-700 hover:shadow-lg active:scale-95">
             Post a Job
           </button>
 
